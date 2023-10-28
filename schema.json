@@ -1,1 +1,14 @@
-{"data":{"fields":["id","name","category"],"primary_key":"id"},"index":{"name":[],"category":[]}}
+{
+  "data": {
+    "fields": [
+      "id",
+      "name",
+      "category"
+    ],
+    "primary_key": "id"
+  },
+  "index": {
+    "name": [],
+    "category": []
+  }
+}

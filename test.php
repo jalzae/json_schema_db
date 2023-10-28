@@ -1,25 +1,10 @@
 <?php
-// New data to be added to the JSON file
-$newData = [
-    "id" => "Hello",
-    "name" => "Hello",
-    "category" => "Hello"
-];
 
-$filePath = 'data.json';
+require 'crud.php';
+$orm = new QueryBuild();
+$tableName = 'barang';
 
-// Read the existing JSON content
-$existingData = json_decode(file_get_contents($filePath), true);
+$data = $orm->readOne($tableName, ['id' => 2]);
 
-if ($existingData === null) {
-    $existingData = [];
-}
-
-// Add the new data to the existing data array
-$existingData[] = $newData;
-
-// Encode the combined data and write it back to the file
-$jsonData = json_encode($existingData, JSON_PRETTY_PRINT);
-file_put_contents($filePath, $jsonData);
-
-echo "New data added successfully.";
+print_r($data);
+die();
