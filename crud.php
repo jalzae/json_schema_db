@@ -196,4 +196,43 @@ class QueryBuild
       return $th->getMessage();
     }
   }
+
+  public function put(string $table, array $newValue)
+  {
+    try {
+      $dataFile = $this->root . $table . '/data.json';
+      $indexFile = $this->root . $table . '/index.json';
+
+      if (file_exists($dataFile) && file_exists($indexFile)) {
+        $data = json_decode(file_get_contents($dataFile), true);
+        $index = json_decode(file_get_contents($indexFile), true);
+
+        if ($data === null || $index === null) {
+          throw new Exception('Failed to decode JSON data or index');
+        }
+
+        // Add the new data to the data array
+        $data[] = $newValue;
+        $newItemId = count($data) - 1; // Index of the newly added data
+
+        foreach ($newValue as $key => $value) {
+          array_push($index['_index'][$key], ['key' => $value, 'index' => $newItemId]);
+        }
+
+        // Encode the updated data back to JSON
+        $jsonData = json_encode($data, JSON_PRETTY_PRINT);
+        $indexData = json_encode($index, JSON_PRETTY_PRINT);
+
+        // Write the updated data and index back to their respective files
+        file_put_contents($dataFile, $jsonData);
+        file_put_contents($indexFile, $indexData);
+
+        return 'Item inserted successfully';
+      } else {
+        throw new Exception('Table or index file not found');
+      }
+    } catch (\Throwable $th) {
+      return $th->getMessage();
+    }
+  }
 }

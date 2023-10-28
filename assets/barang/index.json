@@ -1,0 +1,22 @@
+{
+    "_index": {
+        "id": [
+            {
+                "key": 1,
+                "index": 0
+            }
+        ],
+        "name": [
+            {
+                "key": "test",
+                "index": 0
+            }
+        ],
+        "category": [
+            {
+                "key": "B",
+                "index": 0
+            }
+        ]
+    }
+}

@@ -1,12 +1,7 @@
 [
     {
-        "id": 2,
-        "name": "barang baru",
-        "category": "category A"
-    },
-    {
         "id": 1,
-        "name": "barang baru a",
-        "category": "category A"
+        "name": "test",
+        "category": "B"
     }
 ]

@@ -12,9 +12,5 @@
       "category"
     ],
     "primary_key": "id"
-  },
-  "index": {
-    "name": [],
-    "category": []
   }
 }

@@ -17,6 +17,7 @@ class Orm
         // Directory created successfully
         file_put_contents($this->root . $table . '/schema.json', file_get_contents('global.json'));
         file_put_contents($this->root . $table . '/data.json', json_encode([]));
+        file_put_contents($this->root . $table . '/index.json', file_get_contents('index.json'));
       } else {
         // Failed to create the directory
         echo "Failed to create directory .";
