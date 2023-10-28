@@ -1,12 +1,12 @@
 [
     {
-        "id": "Hello",
-        "name": "Hello",
-        "category": "Hello"
+        "id": 3,
+        "name": "Item 3",
+        "category": "Category B"
     },
     {
-        "id": "Hello",
-        "name": "Hello",
-        "category": "Hello"
+        "id": 3,
+        "name": "Item 3",
+        "category": "Category B"
     }
 ]
